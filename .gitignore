@@ -1,0 +1,26 @@
+# ── Secrets ─────────────────────────────────────────────
+# Nothing containing a credential ever gets staged.
+*.env
+.env
+.env.*
+*api*key*.txt
+secrets.*
+
+# ── Run artifacts, not source ───────────────────────────
+data/findings.backup-*.json
+*.backup-*.json
+
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ── OS / editor cruft ───────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

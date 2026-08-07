@@ -1,0 +1,73 @@
+[
+  {
+    "id": "PRIV-001",
+    "threat": "Loss or theft of the work device exposes Privacute data stored on it",
+    "vulnerability": "Full-disk encryption was identified as not enabled on the work machine during the assessment. Remediated: full-disk encryption is now enabled via Windows Device Encryption.",
+    "scf_controls": [
+      "CRY-05"
+    ],
+    "likelihood": 2,
+    "impact": 2,
+    "risk_score": 4,
+    "risk_band": "Low",
+    "status": "Remediated",
+    "hipaa_refs": [
+      "164.312(a)(2)(iv)"
+    ],
+    "hipaa_refs_source": "analyst-judgment",
+    "remediation": "Completed - full-disk encryption enabled on the work device (Windows Device Encryption)"
+  },
+  {
+    "id": "PRIV-002",
+    "threat": "Sensitive data exposed through AI tools used in Privacute's work",
+    "vulnerability": "Four AI tools (Claude, Perplexity, Gemini, NotebookLM) are used with no documented policy governing approved tools, permitted data, or handling. Data is reviewed and redacted informally, but the practice is ungoverned and undocumented",
+    "scf_controls": [
+      "AAT-01"
+    ],
+    "likelihood": 2,
+    "impact": 3,
+    "risk_score": 6,
+    "risk_band": "Medium",
+    "status": "Open",
+    "hipaa_refs": [],
+    "hipaa_refs_source": "no-hipaa-mapping",
+    "remediation": "Document an AI-use policy defining approved tools, permitted data types, redaction requirements, and prohibited uploads (e.g. customer data)"
+  },
+  {
+    "id": "PRIV-003",
+    "threat": "Prospect and business data is over-retained or improperly disposed of due to no governing standard",
+    "vulnerability": "Prospect data (physician discovery notes, contacts) is held in Google/Gmail with no documented policy for data classification, retention, or disposal. Customer information is kept separate from business data, but the data lifecycle is otherwise ungoverned",
+    "scf_controls": [
+      "DCH-02",
+      "DCH-18"
+    ],
+    "likelihood": 3,
+    "impact": 2,
+    "risk_score": 6,
+    "risk_band": "Medium",
+    "status": "Open",
+    "hipaa_refs": [
+      "164.316(b)(2)(i)"
+    ],
+    "hipaa_refs_source": "scf-crosswalk",
+    "remediation": "Document a data-handling policy covering classification, retention periods, and disposal for prospect and business data"
+  },
+  {
+    "id": "PRIV-004",
+    "threat": "Third-party data exposure goes unmanaged due to no view of which vendors touch what data",
+    "vulnerability": "Operational vendors (Gmail, Google, GitHub, LinkedIn, AI tools) handle Privacute data with no documented inventory of which vendors touch what data and no vendor-risk review. Some contracts exist (NDA, business amendment) but there is no systematic third-party inventory",
+    "scf_controls": [
+      "TPM-04"
+    ],
+    "likelihood": 2,
+    "impact": 2,
+    "risk_score": 4,
+    "risk_band": "Low",
+    "status": "Open",
+    "hipaa_refs": [
+      "164.308(b)(1)"
+    ],
+    "hipaa_refs_source": "scf-crosswalk",
+    "remediation": "Create and maintain a third-party inventory listing each vendor, the data it touches, and its BAA/contract status; establish a periodic vendor review"
+  }
+]
