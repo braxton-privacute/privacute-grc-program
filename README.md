@@ -32,14 +32,18 @@ Full detail, control mappings, and remediation in `risk_assessment.md` and
 
 ## See it run
 
-Every control ID is checked against the live SCF catalog before a report is written.
-An ID that isn't in the catalog stops the run rather than reaching a report:
+Every control ID is checked against the live SCF catalog before a report is written:
 
 ![Pipeline output: 1468 controls loaded from the SCF, then PRIV-001 through PRIV-004 each validating OK against their SCF control titles — CRY-05 Encrypting Data At Rest, AAT-01 AI and Autonomous Technologies Governance, DCH-02 Data and Asset Classification, DCH-18 Media and Data Retention, and TPM-04 Third-Party Services.](screenshots/pipeline-run.png)
 
 The mappings are the substance of the assessment, so they are verified rather than
 recalled — `PRIV-001` resolves to **CRY-05, Encrypting Data At Rest**, the control that
 governs the device-encryption finding since remediated.
+
+An ID that is *not* in the catalog halts the pipeline instead of reaching a report. That
+behaviour is shown in the
+[clinic assessment repo](https://github.com/braxton-privacute/example-clinic-grc-assessment#see-it-run),
+where the validator rejects `PHY-03`.
 
 ## What's inside
 
